@@ -1,0 +1,86 @@
+* --------------------------------------------------------------------
+* SOIL DATA FILE for WOFOST CROP SIMULATION MODEL (CABO Format)
+* Soil profile: usa Loam Soil
+* --------------------------------------------------------------------
+
+* -- Soil water retention curve based on pF values (SMTAB)
+* -- Format: pF_1, Moisture_1, pF_2, Moisture_2, ...
+SMTAB = -1.0, 0.48, 1.0, 0.46, 1.5, 0.42, 1.8, 0.38, 2.0, 0.35, 2.54, 0.3, 3.0, 0.24, 3.5, 0.19, 4.2, 0.16, 6.0, 0.12
+
+* -- Core soil moisture parameters
+* Volumetric moisture content at wilting point [cm3/cm3]
+SMW = 0.145
+* Volumetric moisture content at field capacity [cm3/cm3]
+SMFCF = 0.286
+* Volumetric moisture content at saturation [cm3/cm3]
+SM0 = 0.509
+* Critical air content for aeration stress [cm3/cm3]
+CRAIRC = 0.130
+
+* -- Hydraulic conductivity curve based on pF values (CONTAB)
+* -- Format: pF_1, log10(K)_1, pF_2, log10(K)_2, ...
+CONTAB = 0.0, 1.4, 0.5, 1.1, 1.0, 0.6, 1.5, -0.2, 2.0, -1.5, 2.5, -2.8, 3.0, -4.0, 3.5, -5.2, 4.2, -6.8
+
+* -- Core hydraulic conductivity parameters
+* Hydraulic conductivity of saturated soil [cm/day]
+K0 = 79.23
+* Maximum percolation rate from root zone [cm/day]
+SOPE = 10.0
+* Maximum percolation rate from subsoil [cm/day]
+KSUB = 15.0
+
+* -- Maximum rooting depth of the soil profile
+* Maximum rooting depth [cm]
+RDMSOL = 150.0
+
+* --------------------------------------------------------------------
+* --- [新增] 养分模拟所需参数 ---
+* --- 以下参数是运行养分限制模型所必需的 ---
+* --------------------------------------------------------------------
+
+*******************************************************************************
+* Parameters for the simple soil N-balance
+*******************************************************************************
+* Initial soil nitrogen availability in the top soil (kg N/ha)
+* This value is usually derived from field experiments
+NAVAILI = 10.
+
+* Background N deposition (kg N/ha/day)
+BG_N_SUPPLY = 0.2
+
+* Recovery fraction of applied N fertilizer (-)
+N_RECOVERY_FRACTION = 0.7
+
+*******************************************************************************
+* Parameters for the detailed soil N/P/K-balance (WOFOST 7.2 and higher)
+*******************************************************************************
+* Initial amounts of soil mineral N, P, K (kg/ha) in the different soil layers
+* Layer thickness is assumed to be 10, 10, 20, 20, 20, 30 cm for this example
+NMIN1I = 2.0, 1.0, 1.0, 1.0, 1.0, 1.0
+NMIN2I = 2.0, 1.0, 1.0, 1.0, 1.0, 1.0
+NMIN3I = 2.0, 1.0, 1.0, 1.0, 1.0, 1.0
+PMIN1I = 2.0, 1.0, 1.0, 1.0, 1.0, 1.0
+PMIN2I = 2.0, 1.0, 1.0, 1.0, 1.0, 1.0
+PMIN3I = 2.0, 1.0, 1.0, 1.0, 1.0, 1.0
+KMIN1I = 2.0, 1.0, 1.0, 1.0, 1.0, 1.0
+KMIN2I = 2.0, 1.0, 1.0, 1.0, 1.0, 1.0
+KMIN3I = 2.0, 1.0, 1.0, 1.0, 1.0, 1.0
+
+* Initial amounts of soil organic N, P, K (kg/ha) in the different soil layers
+* Layer thickness is assumed to be 10, 10, 20, 20, 20, 30 cm for this example
+NORGI = 1200., 1200., 1200., 1200., 1200., 1200.
+PORGI = 1200., 1200., 1200., 1200., 1200., 1200.
+KORGI = 1200., 1200., 1200., 1200., 1200., 1200.
+
+* Maximum soil recovery fractions for N, P, K (-)
+DEFN = 0.02
+DEFP = 0.02
+DEFK = 0.02
+
+* Maximum leaching rates for N, P, K (kg/ha/day)
+LN = 1.
+LP = 0.01
+LK = 1.
+
+* Fraction of soil OM that is humus
+OM_HUMUS_FRAC = 0.1

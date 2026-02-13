@@ -1,0 +1,22 @@
+Version: 1.0
+CampaignStartDate: 2014-05-30
+AgroManagement:
+
+# 描述：根据美国爱荷华州的真实田间试验数据进行设置
+# 播种日期: 5月30日
+# 作物: 大豆
+# 品种: [请在此处填入您正在校准的品种名]
+# 这是一个纯雨养、无施肥的基准模拟
+- 2014-05-30:
+    CropCalendar:
+        crop_name: soybean
+        variety_name: Latham_L2744XF_MG27  # <--- 确保这个名字和您.CAB文件里校准的品种名完全一致
+        crop_start_date: 2014-05-30
+        crop_start_type: sowing
+        crop_end_date: 2014-11-01 # <-- 设置一个足够晚的日期，让模型自然成熟
+        crop_end_type: maturity
+        max_duration: 200
+    TimedEvents: []
+    StateEvents: []
+
+- 2014-12-31: null
